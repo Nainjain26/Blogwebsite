@@ -2,15 +2,15 @@
 
 import { X, Facebook, Instagram, Linkedin, Youtube, Twitter } from "lucide-react";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion"; // <-- Import Framer Motion
+import { motion, AnimatePresence } from "framer-motion"; 
 
 const sideMenuLinks = [
   { name: "Home", href: "/" },
   { name: "Projects", href: "/Projects" },
-  { name: "About Us", href: "/About" },
+  { name: "About Us", href: "/AboutUs" },
   { name: "Contact Us", href: "/Contact" },
-  { name: "Privacy Policy", href: "/Privacy-policy" },
-  { name: "Terms & Conditions", href: "/Terms-and-conditions" },
+  { name: "Privacy Policy", href: "/PrivacyPolicy" },
+  { name: "Terms & Conditions", href: "/TermsAndConditions" },
 ];
 
 const socialLinks = [
@@ -26,11 +26,11 @@ export default function SideMenu({ isOpen, onClose }) {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          initial={{ opacity: 0, x: "100%" }}
+          initial={{ opacity: 0, x: "-100%" }}
           animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: "100%" }}
+          exit={{ opacity: 0, x: "-100%" }}
           transition={{ duration: 0.3 }}
-          className="fixed top-0 right-0 w-72 md:w-80 h-full bg-white shadow-lg z-50"
+          className="fixed top-0 left-0 w-72 md:w-80 h-full bg-white shadow-lg z-50"
         >
           {/* Header */}
           <div className="flex items-center justify-between px-5 py-4 border-b">
@@ -50,7 +50,7 @@ export default function SideMenu({ isOpen, onClose }) {
                 key={index}
                 to={href}
                 onClick={onClose}
-                className="text-lg font-medium hover:text-blue-600"
+                className="text-lg font-medium hover:text-yellow-500"
               >
                 {name}
               </Link>

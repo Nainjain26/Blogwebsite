@@ -18,19 +18,19 @@ const footerData = {
     { platform: "Cross", icon: RxCross2, link: "#" }
   ],
   quickLinks: [
-    { name: "Home", link: "#" },
-    { name: "Projects", link: "#" },
-    { name: "About Us", link: "#" },
-    { name: "Contact Us", link: "#" }
+    { name: "Home", link: "/" },
+    { name: "Projects", link: "/Projects" },
+    { name: "About Us", link: "/AboutUs" },
+    { name: "Contact Us", link: "/Contact" }
   ],
   categories: [
-    { name: "Latest Updates", link: "#" },
-    { name: "Campaign Updates", link: "#" },
-    { name: "Industry Telescope", link: "#" },
-    { name: "Case Studies", link: "#" },
-    { name: "News", link: "#" },
-    { name: "Industry Updates", link: "#" },
-    { name: "Experts Speak", link: "#" }
+    { name: "Latest Updates", link: "/" },
+    { name: "Campaign Updates", link: "/CampaignUpdate" },
+    { name: "Industry Telescope", link: "/IndustryTelescope" },
+    { name: "Case Studies", link: "/CaseStudies" },
+    { name: "News", link: "/News" },
+    { name: "Industry Updates", link: "/IndustryUpdate" },
+    { name: "Experts Speak", link: "/ExpertSpeak" }
   ],
   contact: {
     phone: "+91 98765 43210",
@@ -78,8 +78,11 @@ export default function Footer() {
           <h3 className="font-semibold mb-4 text-lg">Quick Links</h3>
           <ul className="space-y-3 text-gray-400">
             {footerData.quickLinks.map((link, index) => (
-              <li key={index} className="hover:text-white cursor-pointer">
-                <a href={link.link}>{link.name}</a>
+              <li key={index} className="">
+                <a href={link.link} className="relative inline-block text-gray-400 transition-colors duration-300 hover:text-white
+                      after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 
+                      after:bg-yellow-400 after:transition-all after:duration-300 hover:after:w-full">
+                        {link.name}</a>
               </li>
             ))}
           </ul>
@@ -90,25 +93,28 @@ export default function Footer() {
           <h3 className="font-semibold mb-4 text-lg">Categories</h3>
           <ul className="space-y-3 text-gray-400">
             {footerData.categories.map((category, index) => (
-              <li key={index} className="hover:text-white cursor-pointer">
-                <a href={category.link}>{category.name}</a>
+              <li key={index} className=" ">
+                <a href={category.link} className="relative inline-block text-gray-400 transition-colors duration-300 hover:text-white
+                      after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 
+                      after:bg-yellow-400 after:transition-all after:duration-300 hover:after:w-full">
+                        {category.name}</a>
               </li>
             ))}
           </ul>
         </div>
 
         {/* Contact */}
-        <div className="flex-1">
+        <div className="flex-1 cursor-pointer">
           <h3 className="font-semibold mb-4 text-lg">Contact Us</h3>
-          <div className="flex items-center gap-3 mb-4 text-gray-400">
+          <div className="flex items-center gap-3 mb-4 hover:text-yellow-400 text-gray-400">
             <FaPhoneAlt className="text-yellow-400" />
             {footerData.contact.phone}
           </div>
-          <div className="flex items-center gap-3 mb-4 text-gray-400">
+          <div className="flex items-center gap-3 mb-4 hover:text-yellow-400 text-gray-400">
             <HiOutlineMail className="text-yellow-400" />
             {footerData.contact.email}
           </div>
-          <div className="flex items-center gap-3 text-gray-400">
+          <div className="flex items-center gap-3 hover:text-yellow-400 text-gray-400">
             <FaMapMarkerAlt className="text-yellow-400" />
             {footerData.contact.address}
           </div>

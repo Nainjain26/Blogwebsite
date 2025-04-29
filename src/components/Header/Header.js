@@ -16,13 +16,13 @@ import { Link } from "react-router-dom";
 import SideMenu from "./Sidemenu.js";
 
 const navLinks = [
-  { name: "Latest Updates", href: "/Latest" },
-  { name: "Campaign Updates", href: "#" },
-  { name: "Industry Telescope", href: "#" },
-  { name: "Case Studies", href: "#" },
-  { name: "News", href: "#" },
-  { name: "Industry Updates", href: "#" },
-  { name: "Experts Speak", href: "#" },
+  { name: "Latest Updates", href: "/" },
+  { name: "Campaign Updates", href: "/CampaignUpdate" },
+  { name: "Industry Telescope", href: "/IndustryTelescope" },
+  { name: "Case Studies", href: "/CaseStudies" },
+  { name: "News", href: "/News" },
+  { name: "Industry Updates", href: "/IndustryUpdate" },
+  { name: "Experts Speak", href: "/ExpertsSpeak" },
 ];
 
 const socialLinks = [
@@ -113,13 +113,20 @@ export default function Navbar() {
         {/* Bottom Menu */}
         <nav className="hidden md:flex items-center justify-center max-w-7xl text-gray-700 mx-auto flex-wrap gap-8 py-3 text-md font-medium md:text-base">
           {navLinks.map(({ name, href }, index) => (
-            <Link key={index} to={href} className="hover:text-blue-500">
-              {name}
-            </Link>
+           <Link
+           key={index}
+           to={href}
+           className="relative inline-block text-black transition-colors duration-300 hover:text-gray-500
+                      after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 
+                      after:bg-yellow-400 after:transition-all after:duration-300 hover:after:w-full"
+         >
+           {name}
+         </Link>
+         
           ))}
 
           <button
-            className="flex items-center gap-1 hover:text-blue-500"
+            className="flex items-center gap-1 hover:text-yellow-500"
             onClick={() => setIsMenuOpen(true)}
           >
             <Menu className="w-5 h-5" />

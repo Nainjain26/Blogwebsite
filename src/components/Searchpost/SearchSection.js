@@ -35,7 +35,7 @@ const SearchSection = () => {
   ];
 
   return (
-    <main className="px-4 md:px-10 py-10 bg-white">
+    <main className="px-4 md:px-10 py-6 bg-white">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
 
         {/* Left Big Card */}
@@ -53,7 +53,7 @@ const SearchSection = () => {
 
           {/* Badge */}
           {posts[0].badge && (
-            <div className="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded">
+            <div className="absolute top-3 left-1 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded">
               {posts[0].badge}
             </div>
           )}
@@ -61,8 +61,8 @@ const SearchSection = () => {
           {/* Content */}
           <div className="absolute bottom-6 left-6 right-6 text-white">
             <h1 className="text-2xl md:text-3xl font-bold mb-3">{posts[0].title}</h1>
-            <p className="text-gray-300 text-sm mb-5">{posts[0].description}</p>
-            <div className="flex items-center text-xs gap-4 text-gray-300">
+            <p className="text-gray-200 text-sm mb-5">{posts[0].description}</p>
+            <div className="flex items-center text-xs gap-4 text-gray-200">
               <div className="flex items-center gap-1">
                 <FaRegCalendarAlt />
                 <span>{posts[0].date}</span>
@@ -94,7 +94,7 @@ const SearchSection = () => {
               {/* Content */}
               <div className="absolute bottom-4 left-4 right-4 text-white">
                 <h2 className="text-lg font-semibold mb-2">{post.title}</h2>
-                <div className="flex items-center text-xs gap-4 text-gray-300">
+                <div className="flex items-center text-xs gap-4 text-gray-200">
                   <div className="flex items-center gap-1">
                     <FaRegCalendarAlt />
                     <span>{post.date}</span>

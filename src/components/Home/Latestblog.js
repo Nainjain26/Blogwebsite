@@ -122,21 +122,23 @@ const BlogSection = () => {
   };
 
   return (
-    <section className="px-4 md:px-10 py-16 max-w-7xl mx-auto">
-      <h2 className="text-2xl md:text-3xl font-bold mb-10 flex items-center gap-2">
-        <span className="h-6 w-1 bg-yellow-500 inline-block"></span>
+    <div className="bg-[#fafafa]">
+    <section className="px-4 md:px-10 py-6 cursor-pointer  max-w-7xl mx-auto">
+      <h2 className="text-2xl md:text-4xl font-bold mb-10 flex items-center gap-2">
+        <span className="h-10 w-1 bg-yellow-500 inline-block"></span>
         Latest Blogs
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
 
         {/* Left Featured Blog */}
-        <div className="flex flex-col">
-          <div className="relative rounded-lg overflow-hidden">
+        <div className="flex flex-col overlay:hidden group">
+
+          <div className="relative rounded-lg overflow-hidden ">
             <img
               src={featuredPost.image}
               alt={featuredPost.title}
-              className="w-full h-64 md:h-80 object-cover"
+              className="w-full h-64 md:h-80 object-cover group-hover:scale-105 transition-transform duration-300 "
             />
           </div>
           <div className="flex gap-2 mt-4">
@@ -166,7 +168,7 @@ const BlogSection = () => {
               <img
                 src={post.image}
                 alt={post.title}
-                className="w-20 h-20 rounded-lg object-cover"
+                className="w-44 h-20 rounded-lg object-cover"
               />
               <div className="flex flex-col justify-between">
                 <h4 className="text-sm font-semibold">{post.title}</h4>
@@ -182,24 +184,11 @@ const BlogSection = () => {
         </div>
 
         {/* Right Text Blogs */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-4">
           {textPosts.map((post) => (
             <div key={post.id} className="flex gap-4">
               <div className="flex-shrink-0 mt-1">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 text-yellow-400"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 4h16v16H4V4zm4 4h8v2H8V8zm0 4h6v2H8v-2z"
-                  />
-                </svg>
+               <img src="/l1.png" alt=""  className="h-6 w-6 text-yellow-400" />
               </div>
               <div className="flex flex-col">
                 <h4 className="text-sm font-semibold">{post.title}</h4>
@@ -230,7 +219,7 @@ const BlogSection = () => {
           </button>
         </div>
       )}
-    </section>
+    </section></div>
   );
 };
 

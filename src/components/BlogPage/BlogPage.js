@@ -1,17 +1,20 @@
 import React from "react";
+import { FaFacebookF, FaLinkedinIn, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import RelatedArticles from "./RelatedArticles";
 
 const blogPosts = [
   {
     title: "Lorem Ipsum vel vulputate est elit varius",
     date: "April 28, 2025",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel magna lorem. Aenean eu nunc ac nunc tincidunt commodo.",
-    image: null,
+    image:null,
   },
   {
     title: "New partnered connection titles at X",
     date: "April 28, 2025",
     description: "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque habitant morbi tristique.",
-    image: "https://via.placeholder.com/600x300?text=Image+1",
+    image: "/s1.jpeg",
   },
   {
     title: "The Importance of Brand Perception",
@@ -23,7 +26,7 @@ const blogPosts = [
     title: "Lorem ipsum dolor sit amet consectetur. Eu dignissim egestas",
     date: "April 28, 2025",
     description: "Curabitur tincidunt, massa nec congue varius, nisl erat iaculis turpis, vel fermentum sapien libero nec ligula.",
-    image: "https://via.placeholder.com/600x300?text=Image+2",
+    image: "/s5.jpeg",
   },
   {
     title: "Monitoring and Responding to Feedback",
@@ -53,15 +56,15 @@ export default function BlogPage() {
 
       {/* Main Title */}
       <section className="max-w-6xl mx-auto px-4 py-8">
-        <h1 className="text-2xl font-bold">X faces $1 billion fine from EU over DSA violations</h1>
+        <h1 className="text-3xl font-bold">X faces $1 billion fine from EU over DSA violations</h1>
       </section>
 
       {/* Top Image */}
       <div className="max-w-6xl mx-auto px-4">
         <img
-          src="https://via.placeholder.com/1200x600?text=Main+Image"
+          src="/s3.jpeg"
           alt="Main visual"
-          className="w-full h-auto rounded-md"
+          className="w-full rounded-md h-[500px]"
         />
       </div>
 
@@ -70,43 +73,54 @@ export default function BlogPage() {
         
         {/* Sidebar */}
         <aside className="lg:w-1/4 space-y-6">
-          <div className="text-gray-500">
+          <div className="text-gray-700">
             <p className="font-semibold mb-4">Contact</p>
             <p>press@example.com</p>
             <p>support@example.com</p>
           </div>
 
-          <div className="text-gray-500">
+          <div className="text-gray-700">
             <p className="font-semibold mb-4">Social</p>
-            <div className="flex space-x-4 text-gray-400">
-              <a href="#">FB</a>
-              <a href="#">TW</a>
-              <a href="#">IG</a>
-              <a href="#">LN</a>
-              <a href="#">YT</a>
+            <div className="flex space-x-3 text-gray-200 ">
+              <Link href="https://facebook.com/YourPage" target="_blank" rel="noopener noreferrer" className="bg-black p-2 rounded-full">
+                <FaFacebookF />
+              </Link>
+              <Link href="https://twitter.com/YourHandle" target="_blank" rel="noopener noreferrer" className="bg-black p-2 rounded-full">
+                <FaTwitter />
+              </Link>
+              <Link href="https://instagram.com/YourProfile" target="_blank" rel="noopener noreferrer" className="bg-black p-2 rounded-full">
+                <FaInstagram />
+              </Link>
+              <Link href="https://linkedin.com/in/YourProfile" target="_blank" rel="noopener noreferrer" className="bg-black p-2 rounded-full">
+                <FaLinkedinIn />
+              </Link>
+              <Link href="https://youtube.com/YourChannel" target="_blank" rel="noopener noreferrer" className="bg-black p-2 rounded-full">
+                <FaYoutube />
+              </Link>
             </div>
           </div>
         </aside>
 
         {/* Blog Posts */}
-        <main className="lg:w-3/4 space-y-12">
+        <main className=" space-y-12">
           {blogPosts.map((post, index) => (
             <article key={index} className="space-y-4">
-              <h2 className="text-lg font-semibold">{post.title}</h2>
-              <p className="text-xs text-gray-400">{post.date}</p>
+              <h2 className="text-2xl font-bold text-black">{post.title}</h2>
+              <p className="text-xs text-gray-500">{post.date}</p>
               {post.image && (
                 <img
                   src={post.image}
                   alt="Blog visual"
-                  className="w-full h-auto rounded-md"
+                  className="object-cover w-full h-[300px]  rounded-md"
                 />
               )}
-              <p className="text-gray-600 text-sm">{post.description}</p>
+              <p className="text-gray-800 text-md">{post.description}</p>
             </article>
           ))}
         </main>
 
       </div>
+      <RelatedArticles/>
     </div>
   );
 }
