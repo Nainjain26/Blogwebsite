@@ -91,12 +91,13 @@ export default function ContactUs() {
                   </div>
                 </div>
 
-                <textarea
-                  placeholder="Message"
-                  rows={4}
-                  className="border rounded-md p-3 w-full focus:outline-yellow-400"
-                ></textarea>
-
+                <div>
+              <textarea
+                placeholder="Message"
+                rows={5}
+                className="w-full h-28 border-2 rounded-md px-4 py-3 outline-none focus:ring-2 resize-none overflow-hidden focus:ring-yellow-400"
+              ></textarea>
+            </div>
                 <button
                   type="submit"
                   className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold w-full py-3 rounded-md transition-all duration-300"
