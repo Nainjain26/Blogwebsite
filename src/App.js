@@ -11,14 +11,14 @@ import Signup from "./components/Auth/Signup";
 import ForgotPassEmail from "./components/Auth/ForgotPasswordEmail";
 import ResetPass from "./components/Auth/ResetPassword";
 import ContactUs from "./components/Contact/Contact";
-import Blogdetails from "./components/BlogPage/Blogdetails"; 
+import Blogdetails from "./components/BlogPage/Blogdetails";
 import BlogPage from "./components/BlogPage/BlogPage";
 import CampaignUpdates from "./components/Pages/CampaignUpdate";
 import AboutUs from "./components/Pages/AboutUs";
 import ProjectGallery from "./components/Pages/ProjectGallery";
 import TermsAndConditions from "./components/Pages/TermsAndCondition";
 import PrivacyPolicy from "./components/Pages/PrivacyPolicy";
-
+// import Dashboard from "./components/Dashboard/Dashboard";
 
 const apiUrl = process.env.REACT_APP_SERVER_URL || "http://localhost:3030";
 
@@ -301,6 +301,24 @@ const App = () => {
             )
           }
         />
+        {/* <Route
+          path="/dashboard"
+          element={
+            isLogin ? (
+              <Dashboard postCategory={postCategory} logout={logoutHandler} />
+            ) : (
+              <Blog
+                posts={posts}
+                pages={pages}
+                currentPageHandler={currentPageHandler}
+                isLoader={isLoader}
+                postCategory={postCategory}
+                categoryHandler={categoryHandler}
+                searchDataHandler={searchDataHandler}
+              />
+            )
+          }
+        /> */}
         <Route
           path="/resetpassword"
           element={
@@ -320,17 +338,16 @@ const App = () => {
           }
         />
 
-        <Route path="/Contact" element={<ContactUs/>} />
+        <Route path="/Contact" element={<ContactUs />} />
         <Route path="/blogdetails" element={<Blogdetails />} />
         <Route path="/blogpage" element={<BlogPage />} />
-        <Route path="/CampaignUpdate" element={<CampaignUpdates/>} />
-        <Route path="/AboutUs" element={<AboutUs/>} />
-        <Route path="/Projects" element={<ProjectGallery/>} />
-        <Route path="/TermsAndConditions" element={<TermsAndConditions/>} />
-        <Route path="/PrivacyPolicy" element={<PrivacyPolicy/>} />
-        
+        <Route path="/CampaignUpdate" element={<CampaignUpdates />} />
+        <Route path="/AboutUs" element={<AboutUs />} />
+        <Route path="/Projects" element={<ProjectGallery />} />
+        <Route path="/TermsAndConditions" element={<TermsAndConditions />} />
+        <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
       </Routes>
-      
+
       <Footer />
     </Fragment>
   );
